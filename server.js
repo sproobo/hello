@@ -1,10 +1,6 @@
 const http = require("node:http");
 
-const greeting = process.env.GREETING;
-if (!greeting) {
-  console.error("GREETING is not set");
-  process.exit(1);
-}
+const greeting = process.env.GREETING ?? "Hello";
 
 const commit = process.env.SOURCE_COMMIT_SHORT ?? "dev";
 
